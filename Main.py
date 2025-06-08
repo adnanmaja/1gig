@@ -55,4 +55,44 @@ def main():
     except:
         print("Error")
 
-main()
+def second():
+    import csv
+    with open('test.csv', 'r') as csv_file:
+        csvread = csv.reader(csv_file)
+
+        with open('new_names', 'w') as newname:
+            csvwrite = csv.writer(newname)
+
+            for lines in csvread:
+                csvwrite.writerow(lines)
+
+
+def third():
+    import json
+    from mahasiswa import Mahasiswa
+    try:
+        jumlahmhs = int(input("Jumlah mahasiswa yang ingin dimasukkan: "))
+    except ValueError:
+        print("Invalid")
+        main()
+    mahasiswas = []   
+ 
+    for i in range(jumlahmhs):   
+        jumlahke = i + 1
+        print("\nData mahasiswa ke-" + str(jumlahke))
+        nama = str(input("Nama: "))
+        umur = int(input("Umur: "))
+        fakultas = str(input("Fakultas: "))
+        ipk = float(input("IPK: "))
+        di_skors = bool(input("Skors? (bool): "))
+        mhs = Mahasiswa(nama, umur, fakultas, ipk, di_skors)
+        mahasiswas.append(mhs)
+        for mhs in mahasiswas:
+            print(mhs.nama + ", "+ mhs.fakultas + ", "+ str(mhs.ipk) + ", " + str(mhs.di_skors))
+
+    file_path = "D:/Python/gig1/mhs.json"
+    with open(file_path, "a") as file:
+        json.dump([m.to_dict() for m in mahasiswas], file, indent=3)
+        print("Success brother")
+
+third()

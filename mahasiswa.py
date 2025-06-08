@@ -6,6 +6,16 @@ class Mahasiswa:
         self.ipk = ipk
         self.di_skors = di_skors
 
+    def to_dict(self):
+        return{
+            "nama": self.nama,
+            "umur": self.umur,
+            "fakultas": self.fakultas,
+            "ipk": self.ipk,
+            "di_skors": self.di_skors
+        }
+
+
     @property
     def pinter(self):
         if self.ipk >= 3.5:
