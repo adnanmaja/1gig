@@ -95,4 +95,5 @@ def third():
         json.dump([m.to_dict() for m in mahasiswas], file, indent=3)
         print("Success brother")
 
+        
 third()
