@@ -2,7 +2,7 @@
 
 First time trying Object-Oriented Programming. This is a simple command-line Python project to input, store, and evaluate student data (`mahasiswa`)
 
-I build this right after completing [freeCodeCamp’s 4-hour Python course](https://www.youtube.com/watch?v=rfscVS0vtbw) with minimal tutorial. Tbh i think i spent too much time and effort on this
+I build this right after finishing [freeCodeCamp’s 4-hour Python course](https://www.youtube.com/watch?v=rfscVS0vtbw) with minimal tutorial. Tbh i think i spent too much time and effort on this
 
 
 ## 🔍 What does it do?
