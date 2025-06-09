@@ -92,12 +92,12 @@ def third():
 
     file_path = "D:/Python/gig1/mhs.json"
     with open(file_path, "a") as file:
-        json.dump([m.to_dict() for m in mahasiswas], file, indent=3)
+        json.dump([m.to_dict() for m in mahasiswas], file, indent=4)
         print("Success brother")
 
         
 #json read
-def fourth():
+def jsonread():
     import json
     from mahasiswa import Mahasiswa
     file_path = "D:/Python/gig1/mhs.json"
@@ -110,13 +110,31 @@ def fourth():
             print("\nData individual mahaisiwa: \n")
             for m in data:
                 if m["ipk"] >= 3.5:
-                    print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]), str(m["di_skors"]) + ", Pinter")
+                    print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]) + ", Pinter")
                 else:
-                    print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]), str(m["di_skors"]) + ", Pinter")
+                    print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]) + ", Pinter")
         elif inputlist == 2:
+            print("\nList orang pintar (IPK >= 3.5):\n")
             mhspintar = [m for m in data if m["ipk"] >= 3.5]
             for m in mhspintar:
-                print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]), str(m["di_skors"]) + ".")
+                print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]) + ".")
 
 
-fourth()
+def jsondelete():
+    import json
+    from mahasiswa import Mahasiswa
+    file_path = "D:/Python/gig1/mhs.json"
+    with open(file_path, "r") as file:
+        data = json.load(file)
+
+        print("Hapus berdasarkan? \n(1) Nama\n(2) Umur\n(3) Fakultas")
+        hapusinp = int(input("Pilih: "))
+        if hapusinp == 1:
+            hapusnama = input("Nama yang ingin dihapus:")
+            with open(file_path, "w") as file:
+                data = [m for m in data if m["nama"] != hapusnama]
+                json.dump(data, file, indent=4)
+
+
+jsonread()
+jsondelete()
