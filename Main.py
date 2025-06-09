@@ -66,7 +66,7 @@ def second():
             for lines in csvread:
                 csvwrite.writerow(lines)
 
-
+#json dump
 def third():
     import json
     from mahasiswa import Mahasiswa
@@ -95,13 +95,8 @@ def third():
         json.dump([m.to_dict() for m in mahasiswas], file, indent=3)
         print("Success brother")
 
-    with open(file_path, "r") as file:
-        data = json.load(file)
-        for m in data:
-            print(m.nama)
         
-
-
+#json read
 def fourth():
     import json
     from mahasiswa import Mahasiswa
@@ -109,7 +104,19 @@ def fourth():
 
     with open(file_path, "r") as file:
         data = json.load(file)
-        for m in data:
-            print(m["nama"], m["umur"], m["fakultas"], m["ipk"], m["di_skors"])
+        print("\nData tersimpan. Unutk melanjutkan, pilih salah satu di bawah: \n(1) List individual \n(2) List orang pintar\n")
+        inputlist = int(input("Pilih: "))
+        if inputlist == 1:
+            print("\nData individual mahaisiwa: \n")
+            for m in data:
+                if m["ipk"] >= 3.5:
+                    print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]), str(m["di_skors"]) + ", Pinter")
+                else:
+                    print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]), str(m["di_skors"]) + ", Pinter")
+        elif inputlist == 2:
+            mhspintar = [m for m in data if m["ipk"] >= 3.5]
+            for m in mhspintar:
+                print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]), str(m["di_skors"]) + ".")
+
 
 fourth()
