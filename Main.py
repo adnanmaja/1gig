@@ -95,5 +95,21 @@ def third():
         json.dump([m.to_dict() for m in mahasiswas], file, indent=3)
         print("Success brother")
 
+    with open(file_path, "r") as file:
+        data = json.load(file)
+        for m in data:
+            print(m.nama)
         
-third()
+
+
+def fourth():
+    import json
+    from mahasiswa import Mahasiswa
+    file_path = "D:/Python/gig1/mhs.json"
+
+    with open(file_path, "r") as file:
+        data = json.load(file)
+        for m in data:
+            print(m["nama"], m["umur"], m["fakultas"], m["ipk"], m["di_skors"])
+
+fourth()
