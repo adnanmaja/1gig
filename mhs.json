@@ -1,3 +1,9 @@
 [
-   
+    {
+        "nama": "EXAMPLE",
+        "umur": 18,
+        "fakultas": "EXAMPLE",
+        "ipk": 4.0,
+        "di_skors": "n"
+    }
 ]
