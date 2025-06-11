@@ -21,13 +21,6 @@ Update : Added a persistent data storing with JSON and CSV
 - Undo last deletion via backup file
 - Input validation with loops and error catching
 
-## 📁 File Structure
-gig1/
-├── mahasiswa.py         # Mahasiswa class with to_dict() method
-├── main.py              # Your main script
-├── mhs.json             # Main data file
-├── backup.json          # Used for undoing deletions
-
 ## 📚 What I Learned
 - Object-Oriented Programming (Classes, Instances)
 - File I/O with JSON
