@@ -1,9 +1,11 @@
 import json
+import csv
 import sys
 from mahasiswa import Mahasiswa
 
 file_path = "D:/Python/gig1/mhs.json"
 backup_path = "D:/Python/gig1/backup.json"
+csv_path = "D:/Python/gig1/mhs.csv"
 
     
 
@@ -54,6 +56,7 @@ def main():
 def jsonread():
     with open(file_path, "r") as file:
         data = json.load(file)
+        csvwrite()
         print("\nData tersimpan. Unutk melanjutkan, pilih salah satu di bawah: \n(1) List individual \n(2) List orang pintar\n")
         while True:
             try:
@@ -101,9 +104,11 @@ def jsonundo():
                     with open(file_path, "w") as undo:
                         json.dump(prev_data, undo, indent=4)
                 print("Success")
+                csvwrite()
                 return
             elif undoinp == 'n':
                 print("Terkonfirmasi")
+                csvwrite()
                 return
             else: #invalid input, kembali ke input
                 print("Mohon masukkan data yang benar") 
@@ -154,6 +159,7 @@ def jsondelete():
                 return
             else: #input diluar opsi yang tersedia
                 print("Invalid")
+    
                 
 #setelah data tersimpan, gate menuju jsondelete()
 def intermezzo():
@@ -174,7 +180,21 @@ def intermezzo():
         else:
             print("Invalid")
 
+
+#writes in csv
+def csvwrite():
+    with open(file_path, "r", encoding="utf-8") as file:
+        data = json.load(file)
+        
+
+    with open(csv_path, "w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=data[0].keys())
+        writer.writeheader()
+        writer.writerows(data)
+    
+    print("CSV updated")
+
+
 main()
 
-
-
+print("Hello world")
