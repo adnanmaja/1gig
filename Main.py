@@ -197,3 +197,7 @@ def csvwrite():
 
 main()
 
+<<<<<<< HEAD
+=======
+print("Hello world")
+>>>>>>> pandas
