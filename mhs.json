@@ -1,12 +1,5 @@
 [
     {
-<<<<<<< HEAD
-        "nama": "EXAMPLE",
-        "umur": 19,
-        "fakultas": "EXAMPLE2",
-        "ipk": 4.1,
-        "di_skors": "n"
-=======
         "nama": "Rafa",
         "umur": 18,
         "fakultas": "Matematika Ilmu Pengetahuan Alam",
@@ -82,6 +75,16 @@
         "fakultas": "Kehutanan",
         "ipk": 3.6,
         "di_skors": false
->>>>>>> pandas
-    }
+    },
+    { "nama": "Lina", "umur": 19, "fakultas": "MIPA", "ipk": 3.55, "di_skors": false },
+    { "nama": "Wahyu", "umur": 21, "fakultas": "Teknik", "ipk": 3.1, "di_skors": true },
+    { "nama": "Kevin", "umur": 20, "fakultas": "Kedokteran", "ipk": 3.95, "di_skors": false },
+    { "nama": "Rani", "umur": 22, "fakultas": "Hukum", "ipk": 3.45, "di_skors": false },
+    { "nama": "Zahra", "umur": 20, "fakultas": "Ekonomika dan Bisnis", "ipk": 2.9, "di_skors": false },
+    { "nama": "Damar", "umur": 19, "fakultas": "Filsafat", "ipk": 3.0, "di_skors": true },
+    { "nama": "Fika", "umur": 23, "fakultas": "Ilmu Sosial dan Ilmu Politik", "ipk": 3.3, "di_skors": false },
+    { "nama": "Putra", "umur": 18, "fakultas": "Peternakan", "ipk": 3.75, "di_skors": false },
+    { "nama": "Mega", "umur": 22, "fakultas": "Pertanian", "ipk": 3.2, "di_skors": true },
+    { "nama": "Joko", "umur": 21, "fakultas": "Teknologi Pertanian", "ipk": 3.65, "di_skors": false },
+    { "nama": "Intan", "umur": 20, "fakultas": "Kehutanan", "ipk": 3.1, "di_skors": false }
 ]
