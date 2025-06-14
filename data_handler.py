@@ -80,6 +80,3 @@ def ipk_ummean():
 def ipk_pintar():
     ipk_pinter = df[df["ipk"] > 3.5]
     print(ipk_pinter)
-
-
-ipk_ummean()

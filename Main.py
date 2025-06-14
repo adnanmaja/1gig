@@ -164,7 +164,7 @@ def jsondelete():
                 
 #setelah data tersimpan, gate menuju jsondelete()
 def intermezzo():
-    print("\n\nPilih aksi selanjutnya: \n(1) Input data\n(2) Hapus data\n(3) Lihat data\n(4) Keluar")
+    print("\n\nPilih aksi: \n(1) Input data\n(2) Hapus data\n(3) Lihat data\n(4) Keluar")
     while True:
         try:
             interinput = int(input("Pilih: "))
@@ -178,6 +178,7 @@ def intermezzo():
             return
         elif interinput == 3:
             viewdata()
+            return
         elif interinput == 4:
             sys.exit()
         else:
@@ -202,7 +203,7 @@ def csvwrite():
 def viewdata():
     with open(file_path, "r") as file:
         data = json.load(file)
-        print("Pilih:\n(1) List Individual \n(2) List IPK >= 3.5 \n(3) Urutkan\n(4) Stats")
+        print("\nPilih:\n(1) List Individual \n(2) List IPK >= 3.5 \n(3) Urutkan\n(4) Stats")
         while True:
             try:
                 inputlist = int(input("Pilih: "))
@@ -213,21 +214,27 @@ def viewdata():
                     if m["di_skors"] == False:
                         print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]) + ", Aktif")
                     else:
-                        else:
                         print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]) + ", Skors")
+                return
             if inputlist == 2:
                 mhspintar = [m for m in data if m["ipk"] >= 3.5]
                 for m in mhspintar:
                     print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]) + ".")
+                return
             if inputlist == 3:
                 viewdata_sort()
+                return
             if inputlist == 4:
+                viewdata_stats()
+                return
+            else:
+                print("Invalid")
 
 
 def viewdata_sort():
     with open(file_path, "r") as file:
         data = json.load(file)
-        print("\nBerdasarkan IPK (Descending)\n(2)Berdasakran IPK (Acending)\n(3) Berdasarkan umur (Descending)\n(4) Berdasarkan umur (Ascending)")
+        print("\n(1) Berdasarkan IPK (Descending)\n(2)Berdasakran IPK (Acending)\n(3) Berdasarkan umur (Descending)\n(4) Berdasarkan umur (Ascending)")
         while True:
             try:
                 inputlist2 = int(input("Pilih: "))
@@ -248,7 +255,7 @@ def viewdata_stats():
     with open(file_path, "r") as file:
         data = json.load(file)
         print("\n(1) Rank fakultas\n(2) Rank umur\n(3) Mean")
-         while True:
+        while True:
             try:
                 inputlist2 = int(input("Pilih: "))
             except ValueError:
@@ -261,3 +268,5 @@ def viewdata_stats():
                 data_handler.ipk_mean()
             else:
                 print("Invalid")
+
+intermezzo()

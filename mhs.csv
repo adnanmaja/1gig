@@ -1,3 +1,23 @@
 nama,umur,fakultas,ipk,di_skors
-EXAMPLE,19,EXAMPLE2,4.1,n
-
+Rafa,18,Matematika Ilmu Pengetahuan Alam,4.0,True
+Alif,20,Teknik,3.75,False
+Dina,21,Kedokteran,3.9,False
+Rizky,22,Hukum,2.8,True
+Tari,19,Ekonomika dan Bisnis,3.4,False
+Bagas,23,Filsafat,2.95,False
+Citra,20,Ilmu Sosial dan Ilmu Politik,3.7,False
+Andi,18,Peternakan,3.2,False
+Sari,21,Pertanian,3.85,False
+Yusuf,23,Teknologi Pertanian,2.5,True
+Nina,22,Kehutanan,3.6,False
+Lina,19,Matematika Ilmu Pengetahuan Alam,3.55,False
+Wahyu,21,Teknik,3.1,True
+Kevin,20,Kedokteran,3.95,False
+Rani,22,Hukum,3.45,False
+Zahra,20,Ekonomika dan Bisnis,2.9,False
+Damar,19,Filsafat,3.0,True
+Fika,23,Ilmu Sosial dan Ilmu Politik,3.3,False
+Putra,18,Peternakan,3.75,False
+Mega,22,Pertanian,3.2,True
+Joko,21,Teknologi Pertanian,3.65,False
+Intan,20,Kehutanan,3.1,False
