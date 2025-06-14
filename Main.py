@@ -1,6 +1,7 @@
 import json
 import csv
 import sys
+import data_handler
 from mahasiswa import Mahasiswa
 
 file_path = "D:/Python/gig1/mhs.json"
@@ -57,7 +58,7 @@ def jsonread():
     with open(file_path, "r") as file:
         data = json.load(file)
         csvwrite()
-        print("\nData tersimpan. Unutk melanjutkan, pilih salah satu di bawah: \n(1) List individual \n(2) List orang pintar\n")
+        print("\nData tersimpan. Unutk melanjutkan, pilih salah satu di bawah: \n(1) List individual \n(2) List orang pintar\n(3) Lainnya\n")
         while True:
             try:
                 inputlist = int(input("Pilih: "))
@@ -163,7 +164,7 @@ def jsondelete():
                 
 #setelah data tersimpan, gate menuju jsondelete()
 def intermezzo():
-    print("\n\nPilih aksi selanjutnya: \n(1) Input data\n(2) Hapus data\n(3) Keluar")
+    print("\n\nPilih aksi selanjutnya: \n(1) Input data\n(2) Hapus data\n(3) Lihat data\n(4) Keluar")
     while True:
         try:
             interinput = int(input("Pilih: "))
@@ -175,7 +176,9 @@ def intermezzo():
         elif interinput == 2:
             jsondelete()
             return
-        elif interinput == 3: #keluar
+        elif interinput == 3:
+            viewdata()
+        elif interinput == 4:
             sys.exit()
         else:
             print("Invalid")
@@ -195,9 +198,48 @@ def csvwrite():
     print("CSV updated")
 
 
-main()
 
-<<<<<<< HEAD
-=======
-print("Hello world")
->>>>>>> pandas
+def viewdata():
+    with open(file_path, "r") as file:
+        data = json.load(file)
+        print("Pilih:\n(1) List Individual \n(2) List IPK >= 3.5 \n(3) Urutkan\n(4) Stats")
+        while True:
+            try:
+                inputlist = int(input("Pilih: "))
+            except ValueError:
+                print("Invalid")
+            if inputlist == 1:
+                for m in data:
+                    if m["di_skors"] == False:
+                        print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]) + ", Aktif")
+                    else:
+                        else:
+                        print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]) + ", Skors")
+            if inputlist == 2:
+                mhspintar = [m for m in data if m["ipk"] >= 3.5]
+                for m in mhspintar:
+                    print(m["nama"], str(m["umur"]), m["fakultas"], str(m["ipk"]) + ".")
+            if inputlist == 3:
+                viewdata_sort()
+            if inputlist == 4:
+
+
+def viewdata_sort():
+    with open(file_path, "r") as file:
+        data = json.load(file)
+        print("\nBerdasarkan IPK (Descending)\n(2)Berdasakran IPK (Acending)\n(3) Berdasarkan umur (Descending)\n(4) Berdasarkan umur (Ascending)")
+        while True:
+            try:
+                inputlist2 = int(input("Pilih: "))
+            except ValueError:
+                print("Invalid")
+            if inputlist2 == 1:
+                data_handler.ipk_sortdesc()
+            if inputlist2 == 2:
+                data_handler.ipk_sortasc()
+            if inputlist2 == 3:
+                data_handler.umur_sortdesc()
+            if inputlist2 == 4:
+                data_handler.umur_sortasc()
+            else:
+                print("Invalid")

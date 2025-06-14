@@ -17,14 +17,26 @@ def ipk_sortdesc():
     fig.show()
 
 def ipk_sortasc():
-    ipksort = df.sort_values(by='ipk', ascending=True)
+    ipksort = df.sort_values(by='ipk', ascending=False)
     print(ipksort)
     fig = px.bar(ipksort, x='nama', y='ipk', title='Student Scores')
     fig.show()
 
+def umur_sortdesc():
+    umursort = df.sort_values(by='umur', ascending=False)
+    print(umursort)
+    fig = px.bar(umursort, x='nama', y='umur', title='Umur')
+    fig.show()
+
+def umur_sortasc():
+    umursort = df.sort_values(by='umur', ascending=True)
+    print(umursort)
+    fig = px.bar(umursort, x='nama', y='umur', title='Umur')
+    fig.show()
+
 def ipk_mean():
-    ipk_cumsum = df[['ipk']].mean()
-    print(ipk_cumsum)
+    mean = df[['ipk']].mean()
+    print(mean)
 
 def ipk_fakmean():
     fakmean = df.groupby("fakultas")["ipk"].mean()
