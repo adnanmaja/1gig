@@ -4,7 +4,7 @@ First time trying Object-Oriented Programming. This is a simple command-line Pyt
 
 I build this right after finishing [freeCodeCamp’s 4-hour Python course](https://www.youtube.com/watch?v=rfscVS0vtbw) with minimal guidance. Tbh i think i spent too much time and effort on this
 
-Update : Added a persistent data storing with JSON and CSV
+Update : Added a sorting mechanism and shows them in a graph
 
 ## 🔍 What does it do?
 - Input data for multiple students
@@ -14,6 +14,9 @@ Update : Added a persistent data storing with JSON and CSV
 - Simple read/filter operations:
   - View all students
   - View high achievers (IPK>=3.5)
+  - Sort students based on IPK and age (umur)
+  - Rank faculties and age by their avg IPK
+  - Presents them in a graph
 - Delete data based on:
   - Name
   - Age
@@ -28,6 +31,8 @@ Update : Added a persistent data storing with JSON and CSV
 - Input validation & loops
 - Data filtering using list comprehensions
 - Project structuring and Git/GitHub basics
+- Dataframe basics (grouping, sorting, mean)
+- Matplotlib operations
 
 
 
