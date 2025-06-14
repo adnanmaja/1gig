@@ -76,7 +76,7 @@
         "ipk": 3.6,
         "di_skors": false
     },
-    { "nama": "Lina", "umur": 19, "fakultas": "MIPA", "ipk": 3.55, "di_skors": false },
+    { "nama": "Lina", "umur": 19, "fakultas": "Matematika Ilmu Pengetahuan Alam", "ipk": 3.55, "di_skors": false },
     { "nama": "Wahyu", "umur": 21, "fakultas": "Teknik", "ipk": 3.1, "di_skors": true },
     { "nama": "Kevin", "umur": 20, "fakultas": "Kedokteran", "ipk": 3.95, "di_skors": false },
     { "nama": "Rani", "umur": 22, "fakultas": "Hukum", "ipk": 3.45, "di_skors": false },

@@ -243,3 +243,21 @@ def viewdata_sort():
                 data_handler.umur_sortasc()
             else:
                 print("Invalid")
+
+def viewdata_stats():
+    with open(file_path, "r") as file:
+        data = json.load(file)
+        print("\n(1) Rank fakultas\n(2) Rank umur\n(3) Mean")
+         while True:
+            try:
+                inputlist2 = int(input("Pilih: "))
+            except ValueError:
+                print("Invalid")
+            if inputlist2 == 1:
+                data_handler.ipk_fakmean()
+            if inputlist2 == 2:
+                data_handler.ipk_ummean()
+            if inputlist2 == 3:
+                data_handler.ipk_mean()
+            else:
+                print("Invalid")
